@@ -2,7 +2,7 @@ require("dotenv").config();
 const { neon } = require("@neondatabase/serverless");
 const path = require('path');
 const express = require('express');
-const sql = neon('postgresql://neondb_owner:EFP1HBR8XYfD@ep-soft-shape-a5fyvx9x.us-east-2.aws.neon.tech/neondb?sslmode=require');
+const sql = neon();
 const { createTable, CreateBookTable, WriteDataBook, WriteUserData } = require("./src/connect-db");
 const app = express();
 app.use(express.json());
