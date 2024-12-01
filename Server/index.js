@@ -1,4 +1,5 @@
 
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./src/routes/authRoutes');
@@ -21,7 +22,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
-app.listen(5000, () => {
-  console.log(`Server running on port ${5000}`);
+// Use PORT from .env or default to 3000
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
